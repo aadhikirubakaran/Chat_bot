@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco 1 AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>🤖 Eco 1</h2>
+        <p>Your Personal AI Assistant</p>
+
+        <button class="new-chat">+ New Chat</button>
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="chat-area">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="circle">E</div>
+                <div>
+                    <h3>Eco 1 AI</h3>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div id="chatbox" class="chatbox">
+
+            <div class="bot-message">
+                <div class="avatar">🤖</div>
+
+                <div class="message">
+                    Hello! 👋<br><br>
+                    I'm <b>Eco 1</b>.<br>
+                    Ask me anything.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Input -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Message Eco 1..."
+                autocomplete="off"
+            >
+
+            <button onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("message").addEventListener("keypress", function(e){
+
+    if(e.key==="Enter"){
+        sendMessage();
+    }
+
+});
+
+</script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
