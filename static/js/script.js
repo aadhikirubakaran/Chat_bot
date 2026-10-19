@@ -232,7 +232,8 @@ document
 
 
 // ==========================================
-// NEW CHAT
+// NEW CHAT WILL OPEN IF THE NEW CHAT WAS CLICK
+// Erase every thing in the previous chat
 // ==========================================
 
 function newChat() {
