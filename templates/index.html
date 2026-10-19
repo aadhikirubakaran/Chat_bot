@@ -6,6 +6,247 @@
     <title>Eco 1 AI</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Reset */
+
+*{
+    margin:0;
+    padding:0;      
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+
+body{
+    background:#eceff1;
+    height:100vh;
+}
+
+/* Main Container */
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#202123;
+    color:white;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    margin-bottom:10px;
+}
+
+.sidebar p{
+    color:#cfcfcf;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+.new-chat{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#10a37f;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.new-chat:hover{
+    background:#0d8c6d;
+}
+
+/* Chat Area */
+
+.chat-area{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:#f7f7f8;
+}
+
+/* Header */
+
+.header{
+    height:70px;
+    background:white;
+    display:flex;
+    align-items:center;
+    padding:20px;
+    border-bottom:1px solid #ddd;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.circle{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#10a37f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.logo span{
+    color:green;
+    font-size:13px;
+}
+
+/* Chat Box */
+
+.chatbox{
+    flex:1;
+    overflow-y:auto;
+    padding:30px;
+}
+
+/* Bot Message */
+
+.bot-message{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+.bot-message .avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#10a37f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:15px;
+    font-size:22px;
+}
+
+.bot-message .message{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    max-width:70%;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    line-height:1.6;
+}
+
+/* User Message */
+
+.user-message{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+.user-message .avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#3f51b5;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:15px;
+    font-size:22px;
+}
+
+.user-message .message{
+    background:#10a37f;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    max-width:70%;
+    line-height:1.6;
+}
+
+/* Input Area */
+
+.input-area{
+    background:white;
+    padding:20px;
+    display:flex;
+    gap:15px;
+    border-top:1px solid #ddd;
+}
+
+.input-area input{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+}
+
+.input-area input:focus{
+    border-color:#10a37f;
+}
+
+.input-area button{
+    width:60px;
+    border:none;
+    border-radius:12px;
+    background:#10a37f;
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+}
+
+.input-area button:hover{
+    background:#0d8c6d;
+}
+
+/* Scroll Bar */
+
+.chatbox::-webkit-scrollbar{
+    width:8px;
+}
+
+.chatbox::-webkit-scrollbar-thumb{
+    background:#bbb;
+    border-radius:20px;
+}
+
+.chatbox::-webkit-scrollbar-thumb:hover{
+    background:#888;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .bot-message .message,
+    .user-message .message{
+        max-width:90%;
+    }
+
+}
+    </style>
 </head>
 <body>
 
@@ -80,7 +321,6 @@ document.getElementById("message").addEventListener("keypress", function(e){
 
 </script>
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
